@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html manifest="./calculator-cache.manifest">
+<head>
+<title>Hooray!!!</title>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="stylesheet" type="text/css" href="calculator.css">
+<link rel="apple-touch-icon" href="./calculator-icon.png" />
+</head>
+<body onload="javascript: add_row( null, 0 );">
+<h1>Jocelyn's Awesome Calculator</h1>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="calculator.js"></script>
+
+<hr><hr>
+<form id="formula_1" action="">
+<div style="background-color:lightyellow" id="whole_shebang">
+  <div>
+    <BUTTON type="button" OnClick="add_row( this, 1 )" title="Add a new product term">+&nbsp;&#8943;</BUTTON>
+  </div>
+</div>
+
+<div>&nbsp;</div>
+
+<div style="vertical-align:middle">
+  <button TYPE="button" NAME="simpbut" OnClick="simplify( 'formula_1' )" title="Simplify!">Simplify</button>
+  &nbsp;&mdash;&nbsp;
+  Number of significant figures:
+  <select id="num_sig_figs" title="Number of significant figures">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3" selected="selected">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+  </select>
+</div>
+</form>
+
+<hr>
+
+<div id="WILL_THIS_WORK"> </div>
+
+<hr><hr>
+
+<h2>TODO:</h2>
+<ul>
+  <li>Check units on addition</li>
+  <li>Conversion factor feature(s)</li>
+  <li>Clear button</li>
+</ul>
+
+</body>
+</html>
+
+<!--
+<form>
+<table style="background-color:lightyellow" name="expression_lmnt">
+  <tr style="background-color:powderblue" name="product_lmnt"><td>
+    <table name="product_detail_lmnt"><tr>
+      <td>
+        <button style="display:inline-block; vertical-align:middle" TYPE="button" NAME="blahvlah" OnClick="">&empty;</button>
+      </td>
+      <td style="background-color:lightgray">
+        <table style="display:inline-block; vertical-align:middle; background-color:lightgray" BORDER=1 RULES=ALL FRAME=VOID>
+          <tr>
+            <td>
+              <input type="text" name="numerator" size="5" value ="0">
+              <input type="text" name="numerator_unit" size="5" value ="">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" name="denominator" size="5" value ="1.0">
+              <input type="text" name="denominator_unit" size="5" value ="">
+            </td>
+          </tr>
+        </table>
+        <table style="display:inline-block; vertical-align:middle">
+          <tr><td>
+            <INPUT TYPE="button" NAME="blahvlah" VALUE="&empty;" OnClick="">
+          </td></tr>
+          <tr><td>
+            <button type="button" NAME="blahvlah" OnClick="">x<sup>-1</sup></button>
+          </td></tr>
+          <tr><td>
+            <button type="button" NAME="blahvlah" OnClick=""><sup>x</sup>&frasl;<sub>y</sub></button>
+          </td></tr>
+        </table>
+      </td>
+      <td>&times;</td>
+      <td style="background-color:lightgray" class="term_main_td">
+        <table style="display:inline-block; vertical-align:middle; background-color:lightgray" name="term" BORDER="1" RULES="all" FRAME="void">
+          <tr>
+            <td>
+              <input type="text" name="numerator" size="5" value ="0">
+              <input type="text" name="numerator_unit" size="5" value ="">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" name="denominator" size="5" value ="1.0">
+              <input type="text" name="denominator_unit" size="5" value ="">
+            </td>
+          </tr>
+        </table>
+        <table style="display:inline-block; vertical-align:middle">
+          <tr><td>
+            <INPUT TYPE="button" NAME="blahvlah" VALUE="&empty;" OnClick="">
+          </td></tr>
+          <tr><td>
+            <button type="button" NAME="blahvlah" OnClick="">x<sup>-1</sup></button>
+          </td></tr>
+          <tr><td>
+            <button type="button" NAME="blahvlah" OnClick=""><sup>x</sup>&frasl;<sub>y</sub></button>
+          </td></tr>
+        </table>
+      </td>
+      <td>
+        <INPUT TYPE="button" NAME="one" VALUE="&times;&nbsp;&hellip;" OnClick="">
+      </td>
+    </tr></table>
+  </td></tr>
+  <tr><td>+</td></tr>
+  <tr style="background-color:powderblue" name="product_lmnt"><td>
+    <table name="product_detail_lmnt"><tr>
+      <td>
+        <button style="display:inline-block; vertical-align:middle" TYPE="button" NAME="blahvlah" OnClick="">&empty;</button>
+      </td>
+      <td style="background-color:lightgray">
+        <table style="display:inline-block; vertical-align:middle; background-color:lightgray" name="term" BORDER=1 RULES=ALL FRAME=VOID>
+          <tr>
+            <td>
+              <input type="text" name="numerator" size="5" value ="0">
+              <input type="text" name="numerator_unit" size="5" value ="">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" name="denominator" size="5" value ="1.0">
+              <input type="text" name="denominator_unit" size="5" value ="">
+            </td>
+          </tr>
+        </table>
+        <table style="display:inline-block; vertical-align:middle">
+          <tr><td>
+            <INPUT TYPE="button" NAME="blahvlah" VALUE="&empty;" OnClick="">
+          </td></tr>
+          <tr><td>
+            <button type="button" NAME="blahvlah" OnClick="">x<sup>-1</sup></button>
+          </td></tr>
+          <tr><td>
+            <button type="button" NAME="blahvlah" OnClick=""><sup>x</sup>&frasl;<sub>y</sub></button>
+          </td></tr>
+        </table>
+      </td>
+      <td>&times;</td>
+      <td style="background-color:lightgray">
+        <table style="display:inline-block; vertical-align:middle; background-color:lightgray" name="term" BORDER=1 RULES=ALL FRAME=VOID>
+          <tr>
+            <td>
+              <input type="text" name="numerator" size="5" value ="0">
+              <input type="text" name="numerator_unit" size="5" value ="">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" name="denominator" size="5" value ="1.0">
+              <input type="text" name="denominator_unit" size="5" value ="">
+            </td>
+          </tr>
+        </table>
+        <table style="display:inline-block; vertical-align:middle">
+          <tr><td>
+            <INPUT TYPE="button" NAME="blahvlah" VALUE="&empty;" OnClick="">
+          </td></tr>
+          <tr><td>
+            <button type="button" NAME="blahvlah" OnClick="">x<sup>-1</sup></button>
+          </td></tr>
+          <tr><td>
+            <button type="button" NAME="blahvlah" OnClick=""><sup>x</sup>&frasl;<sub>y</sub></button>
+          </td></tr>
+        </table>
+      </td>
+      <td>
+        <INPUT TYPE="button" NAME="one" VALUE="&times;&nbsp;&hellip;" OnClick="">
+      </td>
+    </tr></table>
+  </td></tr>
+  <tr><td>
+    <INPUT TYPE="button" NAME="plusbut" VALUE="+&nbsp;&#8943;" OnClick="">
+  </td></tr>
+</table>
+
+<INPUT TYPE="button" NAME="simpbut" VALUE="Simplify" OnClick="">
+</form>
+-->
+
+<!--
+<span style="display:inline-block; vertical-align:middle; background-color:lightgray">
+  <input type="text" name="numerator" size="5" value ="1.0">
+  <input type="hidden" name="denominator" size="5" value ="1.0">
+</span>
+<table style="display:inline-block; vertical-align:middle; background-color:lightgray" name="term" BORDER=1 RULES=ALL FRAME=VOID>
+  <tr>
+    <td>
+      <input type="text" name="numerator_unit" size="5" value ="">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="text" name="denominator_unit" size="5" value ="">
+    </td>
+  </tr>
+</table>
+-->
